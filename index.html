@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Super Llantas · Llantas para moto en Cali</title>
+  <meta name="description" content="Llantas para motos de motocross, enduro, trail y calle en Cali, Colombia. Encuentra tu medida y cotiza por WhatsApp.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta property="og:title" content="Super Llantas · Llantas para toda moto">
+  <meta property="og:description" content="Motocross, enduro, trail y calle. Cali, Colombia.">
+  <meta property="og:image" content="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="inicio">
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__panel"></div>
+    <div class="hero__stripe"></div><div class="hero__stripe"></div>
+    <div class="hero__ghost" aria-hidden="true">Cross</div>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Cali · Colombia</p>
+        <h1 class="hero__title"><span>Rompe</span><span><b class="out" style="font-weight:400">El</b> <b class="fill" style="font-weight:400">Camino</b></span></h1>
+        <p class="hero__lead">Llantas para motocross, enduro, trail y calle. Elige tu moto, encuentra tu medida y rueda con el agarre que se merece tu máquina.</p>
+        <div class="hero__cta">
+          <a class="btn btn--lg" href="llantas.html"><span>Ver llantas</span></a>
+          <a class="btn btn--lg btn--white" href="motos.html"><span>Ver motos</span></a>
+        </div>
+      </div>
+      <div class="hero__art">
+        <div id="hero-wheel" style="width:100%;height:100%"></div>
+        <div class="plate" aria-hidden="true">01<small>SUPER LLANTAS</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSCADOR -->
+  <section class="finder">
+    <div class="wrap">
+      <form class="finder__box" action="llantas.html" method="get">
+        <div class="finder__title"><small>Tablero de pits</small>Encuentra tu llanta</div>
+        <div class="field"><label for="f-tipo">Tipo de moto</label><select id="f-tipo" name="tipo"></select></div>
+        <div class="field"><label for="f-pos">Posición</label>
+          <select id="f-pos" name="pos"><option value="">Delantera y trasera</option><option>Delantera</option><option>Trasera</option></select></div>
+        <div class="field"><label for="f-q">Medida</label><input id="f-q" name="q" placeholder="Ej: 110/90-19" autocomplete="off"></div>
+        <button class="btn btn--lg" type="submit"><span>Buscar</span></button>
+      </form>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div><span>Motocross</span><span>Enduro</span><span>Trail</span><span>Deportivas</span><span>Scooter</span><span>Montaje</span><span>Super Wash</span><span>Viajeros</span></div>
+      <div><span>Motocross</span><span>Enduro</span><span>Trail</span><span>Deportivas</span><span>Scooter</span><span>Montaje</span><span>Super Wash</span><span>Viajeros</span></div>
+    </div>
+  </div>
+
+  <!-- CATEGORÍAS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Para cada terreno</p><h2 class="h2"><span>Elige tu pista</span></h2></div>
+        <p class="muted">No es lo mismo el barro que el asfalto. Escoge el tipo de uso y te mostramos las llantas que mejor se agarran.</p>
+      </div>
+      <div class="cats" id="tipos-grid"></div>
+    </div>
+  </section>
+
+  <div class="tread" aria-hidden="true"></div>
+
+  <!-- LLANTAS DESTACADAS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Salen volando</p><h2 class="h2"><span>Llantas destacadas</span></h2></div>
+        <a class="btn" href="llantas.html"><span>Todo el catálogo</span></a>
+      </div>
+      <div class="grid" id="destacadas"></div>
+    </div>
+  </section>
+
+  <!-- MOTOS -->
+  <section class="section" style="background:linear-gradient(180deg,#0e0e10,#0a0a0c)">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Tu máquina, tus llantas</p><h2 class="h2"><span>Motos</span></h2></div>
+        <p class="muted">Cada moto muestra qué medidas de llanta usa. Un toque y ves las que te sirven.</p>
+      </div>
+      <div class="grid grid--3" id="motos-destacadas"></div>
+      <div style="margin-top:40px;text-align:center"><a class="btn btn--dark" href="motos.html"><span>Ver todas las motos</span></a></div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Más que llantas</p><h2 class="h2"><span>Todo para rodar</span></h2></div>
+        <a class="btn btn--dark" href="servicios.html"><span>Ver servicios</span></a>
+      </div>
+      <div class="svcs" id="servicios-grid"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="checker" aria-hidden="true"></div>
+  <section class="cta">
+    <div class="wrap cta__in">
+      <div>
+        <h2>¿Tu moto lista para rodar?</h2>
+        <p>Escríbenos con la medida o el modelo de tu moto y te cotizamos al instante. Estamos en Cali.</p>
+      </div>
+      <div class="cta__btns">
+        <a class="btn btn--lg btn--white" data-wa="Hola Super Llantas, quiero cotizar una llanta." target="_blank" rel="noopener"><span>Cotizar por WhatsApp</span></a>
+        <a class="btn btn--lg" href="contacto.html"><span>Cómo llegar</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

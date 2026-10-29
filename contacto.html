@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto · Super Llantas</title>
+  <meta name="description" content="Escríbenos por WhatsApp o visítanos en Cali: Av. 9AN # 16N-27. Super Llantas Colombia.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="contacto">
+<main>
+  <section class="phero">
+    <div class="phero__wheel" data-wheel="trail"></div>
+    <div class="wrap">
+      <p class="eyebrow">Hablemos</p>
+      <h1>Conta<span class="out">cto</span></h1>
+      <p>Escríbenos, llámanos o pasa por el taller. Te atendemos con gusto.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact">
+      <div>
+        <div class="infos" id="info"></div>
+        <form class="form" id="form">
+          <h3>Cotiza tu llanta</h3>
+          <p class="muted" style="margin-top:-8px">Llena los datos y te abrimos WhatsApp con el mensaje listo.</p>
+          <div class="field"><label for="c-nombre">Tu nombre</label><input id="c-nombre" name="nombre" required autocomplete="name"></div>
+          <div class="form__row">
+            <div class="field"><label for="c-moto">Tu moto</label><input id="c-moto" name="moto" placeholder="Modelo y año"></div>
+            <div class="field"><label for="c-medida">Medida de llanta</label><input id="c-medida" name="medida" placeholder="Ej: 110/90-19"></div>
+          </div>
+          <div class="field"><label for="c-msg">Mensaje</label><textarea id="c-msg" name="mensaje" placeholder="Cuéntanos qué necesitas"></textarea></div>
+          <button class="btn btn--lg" type="submit"><span>Enviar por WhatsApp</span></button>
+        </form>
+      </div>
+      <div class="map" id="map"></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

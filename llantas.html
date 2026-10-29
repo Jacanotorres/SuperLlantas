@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Llantas para moto · Super Llantas</title>
+  <meta name="description" content="Catálogo de llantas para moto: motocross, enduro, trail y calle. Filtra por tipo, rin y medida y cotiza por WhatsApp.">
+  <meta name="theme-color" content="#08080a">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-page="llantas">
+<main>
+  <section class="phero">
+    <div class="phero__wheel" data-wheel="cross"></div>
+    <div class="wrap">
+      <p class="eyebrow">Catálogo</p>
+      <h1>Llan<span class="out">tas</span></h1>
+      <p>Filtra por tipo de moto, rin o medida. Si no ves la tuya, escríbenos: la conseguimos.</p>
+    </div>
+  </section>
+
+  <div class="bar">
+    <div class="wrap bar__in">
+      <div class="chips" id="chips"></div>
+      <div class="bar__fields">
+        <div class="field"><select id="f-pos" aria-label="Posición"><option value="">Delantera y trasera</option><option>Delantera</option><option>Trasera</option></select></div>
+        <div class="field"><select id="f-rin" aria-label="Rin"></select></div>
+        <div class="field"><input id="f-q" type="search" placeholder="Medida: 110/90-19" aria-label="Buscar medida" autocomplete="off"></div>
+        <button class="link-btn" id="f-reset" type="button">Limpiar</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section--tight" style="padding-bottom:96px">
+    <div class="wrap">
+      <div class="moto-banner" id="moto-banner" hidden></div>
+      <p class="count" id="count"></p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <div class="checker" aria-hidden="true"></div>
+  <section class="cta">
+    <div class="wrap cta__in">
+      <div><h2>¿No encuentras tu medida?</h2><p>Dinos el modelo de tu moto o la medida que lleva escrita en el costado de la llanta.</p></div>
+      <div class="cta__btns"><a class="btn btn--lg btn--white" data-wa="Hola Super Llantas, estoy buscando una llanta para mi moto." target="_blank" rel="noopener"><span>Preguntar por WhatsApp</span></a></div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/art.js"></script>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
