@@ -209,6 +209,33 @@ const Art = (() => {
     </svg>`;
   }
 
+  /* ---------- carro (vista lateral, mirando a la derecha) con espuma ---------- */
+  function car(opts = {}) {
+    const s = 0.46, R = [132, 158], F = [392, 158];
+    const place = c => `<g transform="translate(${c[0] - 100 * s} ${c[1] - 100 * s}) scale(${s})">${wheelInner('sport', opts)}</g>`;
+    const bubbles = [[190,62,9],[222,48,6],[270,56,11],[318,50,7],[352,70,8],[246,38,5],[150,92,7],[420,92,6],[300,34,5],[204,84,5]]
+      .map(([x, y, r]) => `<circle class="bub" cx="${x}" cy="${y}" r="${r}" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.55)" stroke-width="1.4"/><circle cx="${x - r * .3}" cy="${y - r * .3}" r="${r * .22}" fill="#fff" opacity=".7"/>`).join('');
+    return `<svg class="art-car" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${opts.label || 'Carro'}">
+      <defs>
+        <linearGradient id="carG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34343c"/><stop offset=".55" stop-color="#1b1b20"/><stop offset="1" stop-color="#0f0f12"/></linearGradient>
+        <linearGradient id="carW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a3a4a"/><stop offset="1" stop-color="#0c1219"/></linearGradient>
+      </defs>
+      <ellipse cx="262" cy="206" rx="236" ry="9" fill="#000" opacity=".5"/>
+      <path d="M22,160 L26,136 C28,124 44,118 70,114 L150,102 C172,82 194,66 226,60 L316,58 C346,58 368,72 394,96 L440,104 C474,108 498,122 500,142 L500,160 Z" fill="url(#carG)" stroke="#44444d" stroke-width="2"/>
+      <path d="M172,100 C188,80 206,70 230,68 L264,68 L262,98 Z" fill="url(#carW)" stroke="#0a0a0c" stroke-width="2"/>
+      <path d="M276,68 L316,68 C336,70 350,82 370,98 L276,98 Z" fill="url(#carW)" stroke="#0a0a0c" stroke-width="2"/>
+      <path d="M268,70 L268,142" stroke="#0a0a0c" stroke-width="2.5"/>
+      <path d="M252,112 L262,112" stroke="#9a9aa4" stroke-width="3" stroke-linecap="round"/>
+      <path d="M172,100 C190,82 206,72 230,70 L316,70" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="3"/>
+      <path d="M476,118 L496,126 L494,132 L472,128 Z" fill="#fff3c4"/>
+      <path d="M24,136 L42,132 L42,142 L24,144 Z" fill="#ea2b33"/>
+      <path d="M40,146 L470,146" stroke="#ea2b33" stroke-width="2.5" opacity=".8"/>
+      <circle cx="${R[0]}" cy="${R[1]}" r="52" fill="#050506"/><circle cx="${F[0]}" cy="${F[1]}" r="52" fill="#050506"/>
+      ${place(R)}${place(F)}
+      ${opts.foam === false ? '' : bubbles}
+    </svg>`;
+  }
+
   /* Iconos de línea para servicios. */
   const ICONS = {
     wrench: '<path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L3.5 17.2a2 2 0 0 0 2.8 2.8l5.8-5.8a4 4 0 0 0 5.1-5.4l-2.7 2.7-2.4-.5-.5-2.4z"/>',
@@ -221,10 +248,17 @@ const Art = (() => {
     insta: '<rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".8" fill="currentColor"/>',
     mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
-    wa: '<path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-.9.8a4 4 0 0 1-2-2l.8-.9-1-2z"/>'
+    wa: '<path d="M4 20l1.3-4.2A8 8 0 1 1 8.4 18.8L4 20z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-.9.8a4 4 0 0 1-2-2l.8-.9-1-2z"/>',
+    tire: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/>',
+    moto: '<circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l3-6h5l4 6M9 10L8 7h3M14 10l2-3h3"/>',
+    sofa: '<path d="M7 4h6l2 9h4a2 2 0 0 1 2 2v3H5v-3a2 2 0 0 1 2-2h3L7 4z"/>',
+    sparkle: '<path d="M11 3l1.8 5.2L18 10l-5.2 1.8L11 17l-1.8-5.2L4 10l5.2-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/>',
+    shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 5-5"/>',
+    star: '<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z" fill="currentColor"/>',
+    check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>'
   };
   const icon = (name, size = 24) =>
     `<svg class="ico" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name] || ''}</svg>`;
 
-  return { wheel, moto, icon };
+  return { wheel, moto, car, icon };
 })();

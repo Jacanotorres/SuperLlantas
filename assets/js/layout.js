@@ -3,9 +3,9 @@
   const page = document.body.dataset.page || '';
   const NAV = [
     ['index.html', 'Inicio', 'inicio'],
-    ['llantas.html', 'Llantas', 'llantas'],
-    ['motos.html', 'Motos', 'motos'],
     ['servicios.html', 'Servicios', 'servicios'],
+    ['llantas.html', 'Llantas', 'llantas'],
+    ['lavadero.html', 'Lavadero', 'lavadero'],
     ['contacto.html', 'Contacto', 'contacto']
   ];
   const links = NAV.map(([href, label, id]) =>
@@ -19,7 +19,7 @@
       </a>
       <nav class="nav" id="nav" aria-label="Principal">
         ${links}
-        <a class="btn btn--sm nav__cta" href="${waLink('Hola Super Llantas, quiero cotizar una llanta.')}" target="_blank" rel="noopener"><span>${Art.icon('wa', 18)} WhatsApp</span></a>
+        <a class="btn btn--sm nav__cta" href="${waLink('Hola Super Llantas, quiero información.')}" target="_blank" rel="noopener"><span>${Art.icon('wa', 18)} WhatsApp</span></a>
       </nav>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><i></i><i></i><i></i></button>
     </div>
@@ -30,11 +30,10 @@
 
   const footer = `
   <footer class="site-footer">
-    <div class="tread" aria-hidden="true"></div>
     <div class="wrap site-footer__grid">
       <div>
         <img class="site-footer__logo" src="assets/img/logo.webp" alt="${SITE.nombre}" width="200" height="104" loading="lazy">
-        <p class="muted">${SITE.slogan}. Motocross, enduro, trail y calle.</p>
+        <p class="muted">${SITE.slogan}. Montaje de llantas, mantenimientos, aceite y todo para tu moto. Y en el mismo lugar, ${LAVADERO.nombre.toLowerCase()}.</p>
       </div>
       <div>
         <h4>Explora</h4>
@@ -43,8 +42,9 @@
       <div>
         <h4>Encuéntranos</h4>
         <ul class="flist">
-          ${SITE.direccion ? `<li>${Art.icon('pin', 18)}<span>${SITE.direccion}<br>${SITE.ciudad}</span></li>` : ''}
-          ${SITE.telefono ? `<li>${Art.icon('phone', 18)}<a href="tel:+${SITE.whatsapp}">${SITE.telefono}</a></li>` : ''}
+          ${SITE.direccion ? `<li>${Art.icon('pin', 18)}<span>${SITE.direccion}${SITE.barrio ? ' · ' + SITE.barrio : ''}<br>${SITE.ciudad}</span></li>` : ''}
+          ${SITE.telefono ? `<li>${Art.icon('wa', 18)}<a href="${waLink()}" target="_blank" rel="noopener">${SITE.telefono}</a></li>` : ''}
+          ${SITE.telefono2 ? `<li>${Art.icon('phone', 18)}<a href="tel:+${SITE.whatsapp2}">${SITE.telefono2}</a></li>` : ''}
           ${SITE.horario ? `<li>${Art.icon('clock', 18)}<span>${SITE.horario}</span></li>` : ''}
           ${SITE.correo ? `<li>${Art.icon('mail', 18)}<a href="mailto:${SITE.correo}">${SITE.correo}</a></li>` : ''}
           ${redes ? `<li>${redes}</li>` : ''}
