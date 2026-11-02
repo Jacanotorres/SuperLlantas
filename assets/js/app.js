@@ -37,22 +37,6 @@
       </article>`).join('');
   }
 
-  /* ---------- cotizador rápido (inicio y llantas) → WhatsApp ---------- */
-  function quoteForms() {
-    document.querySelectorAll('form[data-quote]').forEach(form => {
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        const d = Object.fromEntries(new FormData(form));
-        const parts = ['Hola Super Llantas, quiero cotizar llantas.'];
-        if (d.moto) parts.push(`Mi moto: ${d.moto}.`);
-        if (d.medida) parts.push(`Medida: ${d.medida}.`);
-        if (d.posicion) parts.push(`Posición: ${d.posicion}.`);
-        if (d.nombre) parts.push(`Soy ${d.nombre}.`);
-        window.open(waLink(parts.join(' ')), '_blank', 'noopener');
-      });
-    });
-  }
-
   /* ---------- páginas ---------- */
   function initHome() {
     const hero = $('#hero-wheel');
@@ -65,19 +49,6 @@
   }
 
   function initServicios() { serviceRows($('#servicios-rows')); }
-
-  function initLlantas() {
-    const g = $('#tipos-grid');
-    g.innerHTML = TIPOS.map(t => `
-      <article class="cat reveal">
-        <div class="cat__art">${Art.wheel(t.art, { label: t.nombre })}</div>
-        <div class="cat__txt">
-          <span class="cat__terreno">${esc(t.terreno)}</span>
-          <h3>${esc(t.nombre)}</h3>
-          <p>${esc(t.texto)}</p>
-        </div>
-      </article>`).join('');
-  }
 
   function initLavadero() {
     const car = $('#lav-car');
@@ -125,11 +96,9 @@
   });
   document.querySelectorAll('[data-site]').forEach(el => { el.textContent = SITE[el.dataset.site] ?? ''; });
   document.querySelectorAll('[data-lav]').forEach(el => { el.textContent = LAVADERO[el.dataset.lav] ?? ''; });
-  quoteForms();
 
   if (page === 'inicio') initHome();
   if (page === 'servicios') initServicios();
-  if (page === 'llantas') initLlantas();
   if (page === 'lavadero') initLavadero();
   if (page === 'contacto') initContacto();
   reveal();

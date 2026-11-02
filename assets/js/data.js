@@ -52,20 +52,6 @@ const LAVADO = [
   { titulo: 'Brillo y protección', icono: 'shield', texto: 'Acabado que se nota y protege la pintura.' }
 ];
 
-/* Tipos de llanta para la página de llantas. art: kind del dibujo. */
-const TIPOS = [
-  { id: 'deportiva', nombre: 'Deportiva y alta cilindrada', terreno: 'Pavimento, curva y velocidad', art: 'sport',
-    texto: 'Perfil redondo y compuestos de agarre para motos de alto desempeño.' },
-  { id: 'touring', nombre: 'Touring y carretera', terreno: 'Viajes largos', art: 'sport',
-    texto: 'Duración y estabilidad para recorrer kilómetros con comodidad.' },
-  { id: 'adventure', nombre: 'Adventure y doble propósito', terreno: 'Calle y camino destapado', art: 'trail',
-    texto: 'Tacos medios: ruedas en asfalto y salen de ruta sin problema.' },
-  { id: 'offroad', nombre: 'Enduro y motocross', terreno: 'Barro, arena y trocha', art: 'cross',
-    texto: 'Tacos altos que muerden la tierra para terreno exigente.' },
-  { id: 'urbana', nombre: 'Urbana y scooter', terreno: 'Ciudad, día a día', art: 'sport',
-    texto: 'Ágiles y económicas para el trayecto diario.' }
-];
-
 /* ---------- utilidades compartidas ---------- */
 function waLink(texto, num) {
   return 'https://wa.me/' + (num || SITE.whatsapp) + '?text=' + encodeURIComponent(texto || 'Hola Super Llantas, quiero información.');

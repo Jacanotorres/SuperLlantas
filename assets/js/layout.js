@@ -4,7 +4,6 @@
   const NAV = [
     ['index.html', 'Inicio', 'inicio'],
     ['servicios.html', 'Servicios', 'servicios'],
-    ['llantas.html', 'Llantas', 'llantas'],
     ['lavadero.html', 'Lavadero', 'lavadero'],
     ['contacto.html', 'Contacto', 'contacto']
   ];
